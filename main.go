@@ -29,6 +29,14 @@ func main() {
 
 	e.GET("/client_data_top", ClientDataTopHtml)
 
+	e.GET("/season_top", SeasonHtml)
+
+	e.GET("/season_top", SeasonHtml)
+
+	e.GET("/account_search", AccountSearchHtml)
+
+	e.GET("/log_search", LogSearchHtml)
+
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
@@ -43,4 +51,16 @@ func TopHtml(c echo.Context) error {
 
 func ClientDataTopHtml(c echo.Context) error {
 	return c.Render(http.StatusOK, "client_data_top", DataForm{})
+}
+
+func SeasonHtml(c echo.Context) error {
+	return c.Render(http.StatusOK, "season_top", DataForm{})
+}
+
+func AccountSearchHtml(c echo.Context) error {
+	return c.Render(http.StatusOK, "account_search", DataForm{})
+}
+
+func LogSearchHtml(c echo.Context) error {
+	return c.Render(http.StatusOK, "log_search", DataForm{})
 }
